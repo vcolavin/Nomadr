@@ -1,0 +1,57 @@
+html, body {
+  min-height: 100%;
+}
+
+body {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color:white;
+  text-shadow: 2px 2px black;
+  font-family: 'Nunito', sans-serif;
+  font-size: 4em;
+
+/*  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;*/
+}
+
+#img {
+  height:500px;
+  width:800px;
+  background-image: url("http://www.online-image-editor.com//styles/2014/images/example_image.png");
+}
+
+.container {
+  text-align: center;
+}
+
+.weather {
+  float:right;
+}
+
+.clock {
+  float:left;
+}
+
+.title {
+  margin: 0 auto;
+}
+
+
+
+.container-fluid {
+  position: relative;
+  min-height: 100%;
+}
+
+.row {
+  /*min-height: 33%;*/
+}
+
+.col-sm-4 {
+  border: 1px solid red;
+  height: 33vh;
+  width: 33vw;
+  /*min-height: 100%;*/
+}
