@@ -2,15 +2,20 @@ var myModule = angular.module('app', [])
 
 myModule.controller("MainController", ['$scope', '$http', function($scope, $http){
 
-//Initial page load get users
 
-    // $http.get("http://nomadr-api.herokuapp.com/api/users").success(function(response){
-    //     console.log(response)
-    //     $scope.users = response
-    // }).error(function(){
-    //     $scope.quote =  "Request Failed!"
-    // })
     $scope.bgImg = 'http://www.mrwallpaper.com/wallpapers/Paris-City-Lights.jpg';
+
+// set this http get to user:
+    $http({
+        url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json',
+        method: 'GET',
+        headers: {},
+        params: {
+            location: '-33.8670522,151.1957362',
+            radius: '5000',
+            key: '' //PUT IN ENV FILE
+        }
+    })
 
 
     $scope.loggedInUser = "54c401f3a9a17b88f9000002"
