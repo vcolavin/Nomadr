@@ -56,3 +56,8 @@ body {
   width: 33vw;
   /*min-height: 100%;*/
 }
+
+@keyframes slideInUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
