@@ -1,4 +1,4 @@
-var myModule = angular.module('app', [])
+var myModule = angular.module('app', ['ngSanitize'])
 
 
 
@@ -47,6 +47,16 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
         var num = 1.8 * (kelvin - 273) + 32
         return num.toFixed()
     }
+
+    $http.get('http://nomadr-api.herokuapp.com/api/wiki/'+$scope.loggedInUser).success(function(response){
+        $scope.wiki_data = response.wiki_content
+        console.log($scope.wiki_data)
+    })
+
+
+
+
+
 
 //Page title
     $scope.title = "Nomadr";
