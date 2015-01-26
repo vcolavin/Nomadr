@@ -7,7 +7,6 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
     $scope.loggedInUser = "54c401f3a9a17b88f9000002"
 
     $http.get('http://localhost:9090/api/google_photo/'+$scope.loggedInUser).success(function(response){
-        console.log(response.photos.length)
         var maxNum = response.photos.length
         var randNum = (Math.floor(Math.random()*(maxNum - 0) + 0))
         $scope.bgImg = response.photos[randNum]
@@ -18,10 +17,10 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 
 
 
-
+// http://nomadr-api.herokuapp.com
 // Get current user
 
-    $http.get("http://nomadr-api.herokuapp.com/api/users/"+$scope.loggedInUser).success(function(response){
+    $http.get("http://localhost:9090/api/users/"+$scope.loggedInUser).success(function(response){
 
         $scope.currentUser = response
 
@@ -58,22 +57,42 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 
     // switching out the login
     var self = this;
-    self.tab = 'signup'
+    $scope.tab = 'signup'
     self.open = function(tab) {
         self.tab = tab;
     }
 
-    self.signUp = function() {
-        $http.post("http://nomadr-api.herokuapp.com/api/users/", {
+    $scope.signUp = function() {
+        var coordinates = self.fetchCoords();
+        $http.post("http://localhost:9090/api/users/", {
             name:       self.user.name,
             email:      self.user.email,
             city:       self.user.city,
-            password:   self.user.password
-        }).then(function(response){
+            coordinates: coordinates
+        }).success(function(response, body) {
             console.log(response)
-            self.open('user')
-            console.log("hey hey hey!")
+            // self.open('user')
+            console.log("post done!")
+        });
+    };
+
+    self.fetchCoords = function() {
+      // console.log(self.user.city);
+        geocoder.geocode({'address': self.user.city}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+              var coords = results[0].geometry.location;
+              // console.log(coords['k']);
+              // console.log(coords['D']);
+              var latLg = ''+coords['k']+','+coords['D']+''
+              return latLg
+              console.log(latLg)
+            } else {
+              alert('Geocode was not successful for the following reason: '
+                + status);
+            }
         })
-    }
+    };
+
+
 
 }]);
