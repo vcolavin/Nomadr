@@ -67,12 +67,6 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
             self.open('user')
             console.log("hey hey hey!")
         })
-        // if post is succesful
-        // self.open('user');
-        // console.log(self.user.name);
-        // console.log(self.user.email);
-        // console.log(self.user.city);
-        // console.log(self.user.password);
     }
 
 }]);
