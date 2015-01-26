@@ -15,7 +15,7 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 //PHOTOS
     //put real URL in here
     $http.get('http://nomadr-api.herokuapp.com/api/google_photo/'+$scope.loggedInUser).success(function(response){
-        console.log(response.photos.length)
+        // console.log(response.photos.length)
         var maxNum = response.photos.length
         var randNum = (Math.floor(Math.random()*(maxNum - 0) + 0))
         $scope.bgImg = response.photos[randNum]
