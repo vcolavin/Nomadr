@@ -56,3 +56,21 @@ body {
   width: 33vw;
   /*min-height: 100%;*/
 }
+
+.line-clamp {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.line-clamp:hover {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    top: -258px;
+    display: -webkit-box;
+    position: relative;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical;
+}
