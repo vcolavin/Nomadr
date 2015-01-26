@@ -1,8 +1,33 @@
 var myModule = angular.module('app', [])
 
+
 myModule.controller("MainController", ['$scope', '$http', function($scope, $http){
+    var self = this;
 
 //Initial page load get users
+    self.fetchCoords = function() {
+      console.log(self.place);
+      // var request = 'https://maps.googleapis.com/maps/api/geocode/json?address=+San+Francisco,+CA&key=API_KEY';
+
+
+      // testJson = $http.get(request);
+      // console.log(testJson)
+
+    geocoder.geocode({'address': self.place}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          var address = results[0].geometry.location;
+          console.log(address);
+        } else {
+          alert('Geocode was not successful for the following reason: '
+            + status);
+        }
+    })
+      // return $http.get().then(
+      //   function(response){
+      //     console.log(response.data)
+      //     // parselatLg data
+      //   })
+    };
 
     // $http.get("http://nomadr-api.herokuapp.com/api/users").success(function(response){
     //     console.log(response)
