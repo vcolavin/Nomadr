@@ -1,21 +1,13 @@
 var myModule = angular.module('app', [])
 
+
+
 myModule.controller("MainController", ['$scope', '$http', function($scope, $http){
 
 
     $scope.bgImg = 'http://www.mrwallpaper.com/wallpapers/Paris-City-Lights.jpg';
 
 // set this http get to user:
-    $http({
-        url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json',
-        method: 'GET',
-        headers: {},
-        params: {
-            location: '-33.8670522,151.1957362',
-            radius: '5000',
-            key: '' //PUT IN ENV FILE
-        }
-    })
 
 
     $scope.loggedInUser = "54c401f3a9a17b88f9000002"
@@ -56,5 +48,25 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
     $scope.teammembers = "Vincent Colavin, Valerie Smith, Philip Riley, Devin Liu, Alfred Calayag";
 
     $scope.searchInput = '';
+
+    // switching out the login
+    var self = this;
+    self.tab = 'signup'
+    self.open = function(tab) {
+        self.tab = tab;
+    }
+
+    self.signUp = function() {
+        $http.post("http://nomadr-api.herokuapp.com/api/users/", {
+            name:       self.user.name,
+            email:      self.user.email,
+            city:       self.user.city,
+            password:   self.user.password
+        }).then(function(response){
+            console.log(response)
+            self.open('user')
+            console.log("hey hey hey!")
+        })
+    }
 
 }]);
