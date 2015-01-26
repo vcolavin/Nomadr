@@ -2,26 +2,25 @@ var myModule = angular.module('app', [])
 
 myModule.controller("MainController", ['$scope', '$http', function($scope, $http){
 
-    $scope.loggedInUser = "54c401f3a9a17b88f9000002"
-
-    $http.get('http://localhost:9090/api/google_photo/'+$scope.loggedInUser).success(function(response){
-        console.log(response.photos.length)
-        var maxNum = response.photos.length
-        var randNum = (Math.floor(Math.random()*(maxNum - 0) + 0))
-        $scope.bgImg = response.photos[randNum]
-    })
-    // $scope.bgImg = 'http://www.mrwallpaper.com/wallpapers/Paris-City-Lights.jpg';
-
-// set this http get to user:
-
-
-
+    $scope.loggedInUser = "54c401f3a9a17b88f9000002" //ALFREDDDDDDDDDDD
 
 // Get current user
 
     $http.get("http://nomadr-api.herokuapp.com/api/users/"+$scope.loggedInUser).success(function(response){
 
         $scope.currentUser = response
+
+//PHOTOS
+    //put real URL in here
+    $http.get('http://nomadr-api.herokuapp.com/api/google_photo/'+$scope.loggedInUser).success(function(response){
+        console.log(response.photos.length)
+        var maxNum = response.photos.length
+        var randNum = (Math.floor(Math.random()*(maxNum - 0) + 0))
+        $scope.bgImg = response.photos[randNum]
+    })
+
+
+
 
 // Trying to turn city into query string so I can plug it into URL!!!! (can I use JQUERY here?)
 
