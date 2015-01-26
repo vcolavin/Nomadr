@@ -56,6 +56,12 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
         self.tab = tab;
     }
 
-
+    self.signUp = function() {
+        self.open('user');
+        console.log(self.user.name);
+        console.log(self.user.email)
+        console.log(self.user.city)
+        console.log(self.user.password)
+    }
 
 }]);
