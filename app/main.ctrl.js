@@ -49,4 +49,13 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 
     $scope.searchInput = '';
 
+    // switching out the login
+    var self = this;
+    self.tab = 'signup'
+    self.open = function(tab) {
+        self.tab = tab;
+    }
+
+
+
 }]);
