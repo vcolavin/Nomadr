@@ -57,11 +57,22 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
     }
 
     self.signUp = function() {
-        self.open('user');
-        console.log(self.user.name);
-        console.log(self.user.email)
-        console.log(self.user.city)
-        console.log(self.user.password)
+        $http.post("http://nomadr-api.herokuapp.com/api/users/", {
+            name:       self.user.name,
+            email:      self.user.email,
+            city:       self.user.city,
+            password:   self.user.password
+        }).then(function(response){
+            console.log(response)
+            self.open('user')
+            console.log("hey hey hey!")
+        })
+        // if post is succesful
+        // self.open('user');
+        // console.log(self.user.name);
+        // console.log(self.user.email);
+        // console.log(self.user.city);
+        // console.log(self.user.password);
     }
 
 }]);
