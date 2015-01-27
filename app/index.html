@@ -21,7 +21,7 @@
     <!-- create user -->
 
     <div ng-switch on="tab">
-        <div ng-switch-when="signup">
+        <div ng-switch-when="user">
             <form ng-submit="signUp()" name="signUpForm">
                 <input type="text" placeholder="Your name" name="uName" ng-model="mainCtrl.user.name" required><br>
                 <input type="email" placeholder="email address" name="uEmail" ng-model="mainCtrl.user.email" required><br>
@@ -32,7 +32,7 @@
         </div>
         <div ng-switch-when="login">
         </div>
-        <div ng-switch-when="user">
+        <div ng-switch-when="signup">
 
 
             <div class="container-fluid">
@@ -40,7 +40,14 @@
                 <!-- row 1 --> 
                 <div class="row">
                     <div class="col-sm-4"><!-- .col-sm-1 -->
-                        <div class="clock">{{}}(Clock here)</div>
+                        <div class="clock">
+                            <a href="http://time.is/San_Francisco" id="time_is_link" rel="nofollow" style="font-size:36px">Time in San Francisco:</a>
+                            <span id="San_Francisco_z14e" style="font-size:36px"></span>
+                            <script src="http://widget.time.is/t.js"></script>
+                            <script>
+                                time_is_widget.init({San_Francisco_z14e:{}});
+                            </script>
+                        </div>
                     </div>
                     <div class="col-sm-4"><!-- .col-sm-2 -->
                         <div class="title">
