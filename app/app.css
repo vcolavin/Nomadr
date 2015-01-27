@@ -12,13 +12,57 @@ html, body {
   min-height: 100%;
 }
 
+/* LOGIN FORM*/
 form {
   color:black;
   display: block;
   position: relative;
-
   margin-left: 35%;
   margin-top: 18%;
+}
+
+form input {
+  background: none;
+  border: none;
+  margin-top: 10px;
+}
+
+::-webkit-input-placeholder {
+    color: #aaa;
+    opacity: 0.5;
+    text-align: center;
+}
+
+/* Play with this: http://www.css3maker.com/css-3-rgba.html*/
+input:focus{
+    background:rgba(48, 25, 25, .5);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #aaa;
+    background-color: white;
+    opacity: 0.75;
+    text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #aaa;
+    background-color: white;
+    opacity: 0.75;
+    text-align: center;
+}
+
+:-ms-input-placeholder {
+   color: #aaa;
+   background-color: white;
+   opacity: 0.75;
+   text-align: center;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 6px black;
 }
 
 body {
