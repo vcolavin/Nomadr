@@ -57,13 +57,4 @@ ourApp.controller("MainController", ['$scope', '$http', '$route', function($scop
         self.tab = tab;
     }
 
-    $scope.signUp = function() {
-        $http.post("http://nomadr-api.herokuapp.com/api/users/", {
-            name:           self.user.name,
-            email:          self.user.email,
-            city:           self.user.city
-        }).success(function(response, body) {
-            $scope.tab ='user'
-        });
-    };
 }]);
