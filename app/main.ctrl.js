@@ -6,7 +6,7 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 
     $scope.loggedInUser = "54c401f3a9a17b88f9000002" //ALFREDDDDDDDDDDD
 
-    $http.get('http://localhost:9090/api/google_photo/'+$scope.loggedInUser).success(function(response){
+    $http.get('http://nomadr-api.herokuapp.com/api/google_photo/'+$scope.loggedInUser).success(function(response){
         var maxNum = response.photos.length
         var randNum = (Math.floor(Math.random()*(maxNum - 0) + 0))
         $scope.bgImg = response.photos[randNum]
@@ -20,7 +20,7 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 // http://nomadr-api.herokuapp.com
 // Get current user
 
-    $http.get("http://localhost:9090/api/users/"+$scope.loggedInUser).success(function(response){
+    $http.get("http://nomadr-api.herokuapp.com/api/users/"+$scope.loggedInUser).success(function(response){
 
 // Trying to turn city into query string so I can plug it into URL!!!! (can I use JQUERY here?)
 
@@ -72,7 +72,7 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 
     $scope.signUp = function() {
         var coordinates = self.fetchCoords();
-        $http.post("http://localhost:9090/api/users/", {
+        $http.post("http://nomadr-api.herokuapp.com/api/users/", {
             name:       self.user.name,
             email:      self.user.email,
             city:       self.user.city,
