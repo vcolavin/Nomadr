@@ -73,7 +73,7 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
             email:          self.user.email,
             city:           self.user.city
         }).success(function(response, body) {
-            self.tab ='user'
+            $scope.tab ='user'
         });
     };
 }]);
