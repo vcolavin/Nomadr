@@ -83,22 +83,13 @@ input[type="submit"] {
   opacity: 0;
   /*visibility: hidden;*/
 
-  -webkit-transition-property: background, opacity, hover;
-  -webkit-transition-duration: 1s;
-}
-
-/*for button click only*/
-input[type="submit"] {
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-duration: 0.1s;
+  -webkit-transition: background 1s, opacity 1s, hover 1s, -webkit-transform 0.1s;
 }
 
 /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties*/
 input[type="submit"]:valid{
   background: rgba(48, 135, 43, 0.5);
   opacity: 1;
-  /*visibility: visible;*/
-  /*opacity: 1.0;*/
 }
 
 input[type="submit"]:valid:hover{
@@ -108,7 +99,7 @@ input[type="submit"]:valid:hover{
 
 /*on button click*/
 input[type="submit"]:valid:active{
-  -webkit-transform: translate(3px, 3px);
+  -webkit-transform: translateY(3px);
 }
 
 body {
