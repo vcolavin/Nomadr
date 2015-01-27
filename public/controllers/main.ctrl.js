@@ -38,10 +38,15 @@ ourApp.controller("MainController", ['$scope', '$http', '$route', function($scop
         return num.toFixed()
     }
 
+// Get Wiki Info
     $http.get('http://nomadr-api.herokuapp.com/api/wiki/'+$scope.loggedInUser).success(function(response){
         $scope.wiki_data = response.wiki_content
         console.log($scope.wiki_data)
     })
+
+// Get Time Info
+    // $http.get('YOURtimeAPIURL')
+    //from the response, set a $scope.time = response
 
 //Page title
     $scope.title = "Nomadr";
@@ -52,9 +57,6 @@ ourApp.controller("MainController", ['$scope', '$http', '$route', function($scop
 
     // switching out the login
     var self = this;
-    $scope.tab = 'signup'
-    self.open = function(tab) {
-        self.tab = tab;
-    }
+
 
 }]);

@@ -7,7 +7,6 @@ ourApp.controller("SignUpController", ['$scope', '$http', '$route', '$location',
     var self = this;
 
     $scope.signUp = function() {
-
         $http.post("http://nomadr-api.herokuapp.com/api/users/", {
             name:           self.user.name,
             email:          self.user.email,
