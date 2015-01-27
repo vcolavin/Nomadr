@@ -4,18 +4,15 @@ var myModule = angular.module('app', ['ngSanitize'])
 
 myModule.controller("MainController", ['$scope', '$http', function($scope, $http){
 
-    $scope.loggedInUser = "54c401f3a9a17b88f9000002" //ALFREDDDDDDDDDDD
+    $scope.loggedInUser = "54c71155d63f2abdf7000001"
 
     $http.get('http://nomadr-api.herokuapp.com/api/google_photo/'+$scope.loggedInUser).success(function(response){
         var maxNum = response.photos.length
         var randNum = (Math.floor(Math.random()*(maxNum - 0) + 0))
         $scope.bgImg = response.photos[randNum]
     })
-    // $scope.bgImg = 'http://www.mrwallpaper.com/wallpapers/Paris-City-Lights.jpg';
 
 // set this http get to user:
-
-
 
 // http://nomadr-api.herokuapp.com
 // Get current user
@@ -23,7 +20,7 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
     $http.get("http://nomadr-api.herokuapp.com/api/users/"+$scope.loggedInUser).success(function(response){
 
 // Trying to turn city into query string so I can plug it into URL!!!! (can I use JQUERY here?)
-
+        $scope.currentUser = response
 
         $http.get('http://api.openweathermap.org/data/2.5/weather?q='+$scope.currentUser.city).success(function(response){
             $scope.weather = response
