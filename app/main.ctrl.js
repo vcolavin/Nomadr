@@ -68,36 +68,12 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
     }
 
     $scope.signUp = function() {
-        var coordinates = self.fetchCoords();
         $http.post("http://nomadr-api.herokuapp.com/api/users/", {
-            name:       self.user.name,
-            email:      self.user.email,
-            city:       self.user.city,
-            coordinates: coordinates
+            name:           self.user.name,
+            email:          self.user.email,
+            city:           self.user.city
         }).success(function(response, body) {
-            console.log(response)
-            // self.open('user')
-            console.log("post done!")
+            self.tab ='user'
         });
     };
-
-    self.fetchCoords = function() {
-      // console.log(self.user.city);
-        geocoder.geocode({'address': self.user.city}, function(results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-              var coords = results[0].geometry.location;
-              // console.log(coords['k']);
-              // console.log(coords['D']);
-              var latLg = ''+coords['k']+','+coords['D']+''
-              return latLg
-              console.log(latLg)
-            } else {
-              alert('Geocode was not successful for the following reason: '
-                + status);
-            }
-        })
-    };
-
-
-
 }]);
