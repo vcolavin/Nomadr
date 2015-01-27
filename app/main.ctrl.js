@@ -1,10 +1,10 @@
-var myModule = angular.module('app', [])
+var myModule = angular.module('app', ['ngSanitize'])
 
 
 
 myModule.controller("MainController", ['$scope', '$http', function($scope, $http){
 
-    $scope.loggedInUser = "54c401f3a9a17b88f9000002"
+    $scope.loggedInUser = "54c401f3a9a17b88f9000002" //ALFREDDDDDDDDDDD
 
     $http.get('http://localhost:9090/api/google_photo/'+$scope.loggedInUser).success(function(response){
         var maxNum = response.photos.length
@@ -21,8 +21,6 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 // Get current user
 
     $http.get("http://localhost:9090/api/users/"+$scope.loggedInUser).success(function(response){
-
-        $scope.currentUser = response
 
 // Trying to turn city into query string so I can plug it into URL!!!! (can I use JQUERY here?)
 
@@ -47,6 +45,16 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
         var num = 1.8 * (kelvin - 273) + 32
         return num.toFixed()
     }
+
+    $http.get('http://nomadr-api.herokuapp.com/api/wiki/'+$scope.loggedInUser).success(function(response){
+        $scope.wiki_data = response.wiki_content
+        console.log($scope.wiki_data)
+    })
+
+
+
+
+
 
 //Page title
     $scope.title = "Nomadr";
