@@ -64,16 +64,12 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
     }
 
     $scope.signUp = function() {
-        // var coordinates = self.fetchCoords();
         $http.post("http://nomadr-api.herokuapp.com/api/users/", {
-            name:       self.user.name,
-            email:      self.user.email,
-            city:       self.user.city,
-            coordinates: coordinates
+            name:           self.user.name,
+            email:          self.user.email,
+            city:           self.user.city
         }).success(function(response, body) {
-            console.log(response)
-            // self.open('user')
-            console.log("post done!")
+            $scope.tab ='user'
         });
     };
 
@@ -81,5 +77,4 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
         alert('can reach sign in function');
 
     };
-
 }]);
