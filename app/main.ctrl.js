@@ -62,7 +62,8 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 
     // switching out the login
     var self = this;
-    $scope.tab = 'signup'
+    // $scope.tab = 'signup'
+    $scope.tab = 'signIn'
     self.open = function(tab) {
         self.tab = tab;
     }
@@ -79,6 +80,10 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
             // self.open('user')
             console.log("post done!")
         });
+    };
+
+    $scope.signIn = function() {
+        alert('can reach sign in function');
     };
 
     self.fetchCoords = function() {
