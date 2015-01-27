@@ -6,6 +6,9 @@ myModule.config(['$routeProvider',
       when('/', {
         templateUrl: '../partials/splash.html'
       }).
+      when('/signin', {
+        templateUrl: '../partials/signin.html'
+      }).
       otherwise({
         redirectTo: '/phones'
       });

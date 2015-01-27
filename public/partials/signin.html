@@ -1,4 +1,4 @@
-<div ng-switch-when="signIn">
+<div ngController="SignInController">
     <form ng-submit="signIn()" name="signInForm">
         <input type="text" placeholder="Your name" name="uName" ng-model="mainCtrl.login.name" required><br>
         <input type="email" placeholder="email address" name="uEmail" ng-model="mainCtrl.login.email" required><br>
