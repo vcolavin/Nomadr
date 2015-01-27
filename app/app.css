@@ -39,6 +39,7 @@ form input {
 /* Play with this: http://www.css3maker.com/css-3-rgba.html*/
 input:focus{
     background:rgba(48, 25, 25, .5);
+    outline: none;
 }
 
 :-moz-placeholder { /* Firefox 18- */
@@ -73,17 +74,19 @@ input[type="submit"] {
   border: 1px solid #fff;
   margin-left: 167px;
   background: green;
+  width: 100px;
+  height: 60px;
   border-radius: 10%;
   box-shadow: 2px 2px 10px #000;
   color: #fff;
   font-size: 0.8em;
-  padding: 4px 25px 4px 25px;
+  /*padding: 4px 25px 4px 25px;*/
   text-shadow: 1px 1px 5px #000;
   background: rgba(48, 135, 43, 0);
   opacity: 0;
   /*visibility: hidden;*/
 
-  -webkit-transition: background 1s, opacity 1s, hover 1s, -webkit-transform 0.1s;
+  -webkit-transition: background 1s, border-color 1s, opacity 1s, hover 1s, box-shadow 1s, border-radius 1s, width 0.5s, height 0.5s, -webkit-transform 0.1s;
 }
 
 /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties*/
@@ -94,12 +97,17 @@ input[type="submit"]:valid{
 
 input[type="submit"]:valid:hover{
   background: rgba(48, 135, 43, 1.0);
+  box-shadow: 0px 2px 18px #000;
+  /*width: 90px;*/
+  /*height: 90px;*/
+  /*border-radius: 100%;*/
   opacity: 1;
 }
 
 /*on button click*/
 input[type="submit"]:valid:active{
   -webkit-transform: translateY(3px);
+  box-shadow: 0px 0px 4px #000;
 }
 
 body {
