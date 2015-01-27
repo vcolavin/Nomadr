@@ -78,11 +78,16 @@ input[type="submit"] {
   text-shadow: 1px 1px 5px #000;
   background: rgba(48, 135, 43, 0.5);
   visibility: hidden;
+
 }
 
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties*/
 input[type="submit"]:valid{
-  visibility:visible;
+  visibility: visible;
+  /*opacity: 1.0;*/
 }
+
+
 
 body {
   -webkit-background-size: cover;
