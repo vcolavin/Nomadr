@@ -10,10 +10,6 @@
 
 
     <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script>
-    geocoder = new google.maps.Geocoder()
-    </script>
 </head>
 
 <body style="background-image:url({{bgImg}})" ng-app="app" ng-controller="MainController as mainCtrl">
@@ -21,6 +17,16 @@
     <!-- create user -->
 
     <div ng-switch on="tab">
+        <div ng-switch-when="splash">
+            <form class="splash" name="signInForm" >
+                <h2>Welcome to</h2>
+                <div class="title">
+                <h1>{{title}}</h1>
+                </div>
+                <input type="submit" class="sign_in_button" value="Sign In"><br>
+                <input type="submit" class="sign_in_button" value="Sign Up">
+            </form>
+        </div>
         <div ng-switch-when="signup">
             <form ng-submit="signUp()" name="signUpForm">
                 <input type="text" placeholder="Your name" name="uName" ng-model="mainCtrl.user.name" required><br>

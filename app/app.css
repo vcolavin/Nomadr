@@ -72,7 +72,8 @@ input[type="text"], input[type="email"], input[type="password"] {
 /*submit button*/
 input[type="submit"] {
   border: 1px solid #fff;
-  margin-left: 167px;
+  /*margin-left: 167px;*/
+  margin-left:0;
   background: green;
   width: 100px;
   height: 60px;
@@ -185,4 +186,19 @@ body {
     position: relative;
     -webkit-line-clamp: 9;
     -webkit-box-orient: vertical;
+}
+
+input[value="Sign In"] {
+  width:200px;
+}
+
+input[value="Sign Up"] {
+  width:200px;
+}
+
+.splash {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding: 26px;
 }

@@ -48,11 +48,6 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
         console.log($scope.wiki_data)
     })
 
-
-
-
-
-
 //Page title
     $scope.title = "Nomadr";
 
@@ -63,13 +58,13 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
     // switching out the login
     var self = this;
     // $scope.tab = 'signup'
-    $scope.tab = 'signIn'
+    $scope.tab = 'splash'
     self.open = function(tab) {
         self.tab = tab;
     }
 
     $scope.signUp = function() {
-        var coordinates = self.fetchCoords();
+        // var coordinates = self.fetchCoords();
         $http.post("http://nomadr-api.herokuapp.com/api/users/", {
             name:       self.user.name,
             email:      self.user.email,
@@ -84,25 +79,7 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 
     $scope.signIn = function() {
         alert('can reach sign in function');
+
     };
-
-    self.fetchCoords = function() {
-      // console.log(self.user.city);
-        geocoder.geocode({'address': self.user.city}, function(results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-              var coords = results[0].geometry.location;
-              // console.log(coords['k']);
-              // console.log(coords['D']);
-              var latLg = ''+coords['k']+','+coords['D']+''
-              return latLg
-              console.log(latLg)
-            } else {
-              alert('Geocode was not successful for the following reason: '
-                + status);
-            }
-        })
-    };
-
-
 
 }]);
