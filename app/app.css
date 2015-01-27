@@ -1,3 +1,13 @@
+@font-face {
+    font-family: RockSalt;
+    src: url('vendor/RockSalt.ttf');
+}
+
+@font-face {
+    font-family: QuattrocentoSans-Regular;
+    src: url('vendor/QuattrocentoSans-Regular.ttf');
+}
+
 html, body {
   min-height: 100%;
 }
@@ -8,12 +18,16 @@ body {
   -o-background-size: cover;
   background-size: cover;
   color:white;
-  text-shadow: 2px 2px black;
-  font-family: 'Nunito', sans-serif;
+  text-shadow: 2px 2px 8px black;
+  font-family: QuattrocentoSans-Regular, sans-serif;
   font-size: 4em;
 
 /*  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;*/
+}
+
+.title h1 {
+  font-family: RockSalt, sans-serif;
 }
 
 #img {
