@@ -1,12 +1,10 @@
-<div ngController="SplashController">
-  <form class="splash" name="signInForm" >
-    <h2>Welcome to</h2>
+<div class="background" ng-style="{'background-image':'url({{background}})'}" ng-controller="SplashController">
+    <span class="title"><h2>Welcome to</h2></span>
     <div class="title">
-      <h1>{{fart}}</h1>
+      <h1>{{title}}</h1>
     </div>
-    <a href="#/signin">sign in</a>
-    <button></button>
-    <input type="submit" class="sign_in_button" value="Sign In"><br>
-    <input type="submit" class="sign_in_button" value="Sign Up">
-  </form>
+
+    <a href="#/signin">Sign In</a><br>
+    <a href="#/signup">Sign Up</a>
+
 </div>

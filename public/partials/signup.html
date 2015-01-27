@@ -1,4 +1,4 @@
-<div ng-switch-when="signup">
+<div ngController="SignUnController">
     <form ng-submit="signUp()" name="signUpForm">
         <input type="text" placeholder="Your name" name="uName" ng-model="mainCtrl.user.name" required><br>
         <input type="email" placeholder="email address" name="uEmail" ng-model="mainCtrl.user.email" required><br>

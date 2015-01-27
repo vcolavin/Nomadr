@@ -1,6 +1,6 @@
 
 
-myModule.controller("SignInController", ['$scope', '$http', '$route', function($scope, $http, $route){
+ourApp.controller("SignInController", ['$scope', '$http', '$route', function($scope, $http, $route){
 
 
 }]);

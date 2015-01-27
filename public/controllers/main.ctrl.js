@@ -1,4 +1,4 @@
-myModule.controller("MainController", ['$scope', '$http', '$route', function($scope, $http, $route){
+ourApp.controller("MainController", ['$scope', '$http', '$route', function($scope, $http, $route){
 
     $scope.loggedInUser = "54c71155d63f2abdf7000001"
 

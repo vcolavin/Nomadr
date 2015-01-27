@@ -1,6 +1,6 @@
-var myModule = angular.module('app', ['ngSanitize', 'ngRoute'])
+var ourApp = angular.module('ourApp', ['ngSanitize', 'ngRoute'])
 
-myModule.config(['$routeProvider',
+ourApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/', {
@@ -8,6 +8,9 @@ myModule.config(['$routeProvider',
       }).
       when('/signin', {
         templateUrl: '../partials/signin.html'
+      }).
+      when('/signup', {
+        templateUrl: '../partials/signup.html'
       }).
       otherwise({
         redirectTo: '/phones'
