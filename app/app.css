@@ -83,14 +83,22 @@ input[type="submit"] {
   opacity: 0;
   /*visibility: hidden;*/
 
+  -webkit-transition-property: background, opacity, hover;
+  -webkit-transition-duration: 1s;
 }
 
 /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties*/
 input[type="submit"]:valid{
-  visibility: visible;
+  background: rgba(48, 135, 43, 0.5);
+  opacity: 1;
+  /*visibility: visible;*/
   /*opacity: 1.0;*/
 }
 
+input[type="submit"]:valid:hover{
+  background: rgba(48, 135, 43, 1.0);
+  opacity: 1;
+}
 
 
 body {
