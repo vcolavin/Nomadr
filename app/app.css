@@ -77,6 +77,11 @@ input[type="submit"] {
   padding: 4px 25px 4px 25px;
   text-shadow: 1px 1px 5px #000;
   background: rgba(48, 135, 43, 0.5);
+  visibility: hidden;
+}
+
+input[type="submit"]:valid{
+  visibility:visible;
 }
 
 body {
