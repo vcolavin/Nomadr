@@ -10,18 +10,22 @@
 
 
     <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>
+    geocoder = new google.maps.Geocoder()
+    </script>
 </head>
 
 <body style="background-image:url({{bgImg}})" ng-app="app" ng-controller="MainController as mainCtrl">
 
     <!-- create user -->
-    <div ng-switch on="mainCtrl.tab">
+    <div ng-switch on="tab">
         <div ng-switch-when="signup">
-            <form ng-submit="mainCtrl.signUp()" name="signUpForm">
-                <input type="text" placeholder="Your name" name="uName" ng-model="mainCtrl.user.name" required>
-                <input type="email" placeholder="email address" name="uEmail" ng-model="mainCtrl.user.email" required>
-                <input type="text" placeholder="city" name="uCity" ng-model="mainCtrl.user.city" required>
-                <input type="password" placeholder="password" name="uPassword" ng-model="mainCtrl.user.password" required>
+            <form ng-submit="signUp()" name="signUpForm">
+                <input type="text" placeholder="Your name" name="uName" ng-model="mainCtrl.user.name" required><br>
+                <input type="email" placeholder="email address" name="uEmail" ng-model="mainCtrl.user.email" required><br>
+                <input type="text" placeholder="city" name="uCity" ng-model="mainCtrl.user.city" required><br>
+                <input type="password" placeholder="password" name="uPassword" ng-model="mainCtrl.user.password" required><br>
                 <input type="submit" value="heya" ng-disabled="signUpForm.$invalid">
             </form>
         </div>

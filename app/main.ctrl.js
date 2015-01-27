@@ -6,23 +6,21 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 
     $scope.loggedInUser = "54c401f3a9a17b88f9000002" //ALFREDDDDDDDDDDD
 
-// Get current user
-
-    $http.get("http://nomadr-api.herokuapp.com/api/users/"+$scope.loggedInUser).success(function(response){
-
-        $scope.currentUser = response
-
-//PHOTOS
-    //put real URL in here
-    $http.get('http://nomadr-api.herokuapp.com/api/google_photo/'+$scope.loggedInUser).success(function(response){
-        // console.log(response.photos.length)
+    $http.get('http://localhost:9090/api/google_photo/'+$scope.loggedInUser).success(function(response){
         var maxNum = response.photos.length
         var randNum = (Math.floor(Math.random()*(maxNum - 0) + 0))
         $scope.bgImg = response.photos[randNum]
     })
+    // $scope.bgImg = 'http://www.mrwallpaper.com/wallpapers/Paris-City-Lights.jpg';
+
+// set this http get to user:
 
 
 
+// http://nomadr-api.herokuapp.com
+// Get current user
+
+    $http.get("http://localhost:9090/api/users/"+$scope.loggedInUser).success(function(response){
 
 // Trying to turn city into query string so I can plug it into URL!!!! (can I use JQUERY here?)
 
@@ -67,22 +65,42 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 
     // switching out the login
     var self = this;
-    self.tab = 'signup'
+    $scope.tab = 'signup'
     self.open = function(tab) {
         self.tab = tab;
     }
 
-    self.signUp = function() {
-        $http.post("http://nomadr-api.herokuapp.com/api/users/", {
+    $scope.signUp = function() {
+        var coordinates = self.fetchCoords();
+        $http.post("http://localhost:9090/api/users/", {
             name:       self.user.name,
             email:      self.user.email,
             city:       self.user.city,
-            password:   self.user.password
-        }).then(function(response){
+            coordinates: coordinates
+        }).success(function(response, body) {
             console.log(response)
-            self.open('user')
-            console.log("hey hey hey!")
+            // self.open('user')
+            console.log("post done!")
+        });
+    };
+
+    self.fetchCoords = function() {
+      // console.log(self.user.city);
+        geocoder.geocode({'address': self.user.city}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+              var coords = results[0].geometry.location;
+              // console.log(coords['k']);
+              // console.log(coords['D']);
+              var latLg = ''+coords['k']+','+coords['D']+''
+              return latLg
+              console.log(latLg)
+            } else {
+              alert('Geocode was not successful for the following reason: '
+                + status);
+            }
         })
-    }
+    };
+
+
 
 }]);
