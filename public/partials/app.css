@@ -1,11 +1,11 @@
 @font-face {
     font-family: RockSalt;
-    src: url('vendor/RockSalt.ttf');
+    src: url('../public/vendor/RockSalt.ttf');
 }
 
 @font-face {
     font-family: QuattrocentoSans-Regular;
-    src: url('vendor/QuattrocentoSans-Regular.ttf');
+    src: url('../public/vendor/QuattrocentoSans-Regular.ttf');
 }
 
 html, body {

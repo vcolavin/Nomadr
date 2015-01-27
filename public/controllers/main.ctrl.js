@@ -1,8 +1,4 @@
-var myModule = angular.module('app', ['ngSanitize'])
-
-
-
-myModule.controller("MainController", ['$scope', '$http', function($scope, $http){
+myModule.controller("MainController", ['$scope', '$http', '$route', function($scope, $http, $route){
 
     $scope.loggedInUser = "54c71155d63f2abdf7000001"
 
@@ -14,7 +10,6 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 
 // set this http get to user:
 
-// http://nomadr-api.herokuapp.com
 // Get current user
 
     $http.get("http://nomadr-api.herokuapp.com/api/users/"+$scope.loggedInUser).success(function(response){
@@ -47,11 +42,6 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
         $scope.wiki_data = response.wiki_content
         console.log($scope.wiki_data)
     })
-
-
-
-
-
 
 //Page title
     $scope.title = "Nomadr";

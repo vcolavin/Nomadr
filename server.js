@@ -27,7 +27,7 @@ router.use(function(request, response, next){
   next();
 })
 
-app.use(express.static(__dirname + '/app'));
+app.use(express.static(__dirname + '/public'));
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 // router.get('/', function(request, response) {
