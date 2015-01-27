@@ -12,7 +12,10 @@ ourApp.config(['$routeProvider',
       when('/signup', {
         templateUrl: '../partials/signup.html'
       }).
+      when('/home', {
+        templateUrl: '../partials/home.html'
+      }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/'
       });
   }]);

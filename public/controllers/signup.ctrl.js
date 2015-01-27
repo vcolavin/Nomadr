@@ -1,4 +1,4 @@
-ourApp.controller("SignUpController", ['$scope', '$http', '$route', function($scope, $http, $route){
+ourApp.controller("SignUpController", ['$scope', '$http', '$route', '$location', function($scope, $http, $route, $location){
 
   console.log("Controller")
 
@@ -14,7 +14,7 @@ ourApp.controller("SignUpController", ['$scope', '$http', '$route', function($sc
             city:           self.user.city
         }).success(function(response, body) {
             console.log("Success!")
-            //redirect
+            $location.path('/home')
         });
     };
 }]);
