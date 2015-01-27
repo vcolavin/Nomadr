@@ -19,6 +19,7 @@
 <body style="background-image:url({{bgImg}})" ng-app="app" ng-controller="MainController as mainCtrl">
 
     <!-- create user -->
+
     <div ng-switch on="tab">
         <div ng-switch-when="signup">
             <form ng-submit="signUp()" name="signUpForm">
@@ -32,6 +33,8 @@
         <div ng-switch-when="login">
         </div>
         <div ng-switch-when="user">
+
+
             <div class="container-fluid">
 
                 <!-- row 1 --> 
