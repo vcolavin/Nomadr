@@ -87,6 +87,12 @@ input[type="submit"] {
   -webkit-transition-duration: 1s;
 }
 
+/*for button click only*/
+input[type="submit"] {
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 0.1s;
+}
+
 /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties*/
 input[type="submit"]:valid{
   background: rgba(48, 135, 43, 0.5);
@@ -100,6 +106,10 @@ input[type="submit"]:valid:hover{
   opacity: 1;
 }
 
+/*on button click*/
+input[type="submit"]:valid:active{
+  -webkit-transform: translate(3px, 3px);
+}
 
 body {
   -webkit-background-size: cover;
