@@ -24,16 +24,18 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
             var maxNum = response.photos.length
             var randNum = (Math.floor(Math.random()*(maxNum - 0) + 0))
             $scope.bgImg = response.photos[randNum]
-            console.log("we're in the photo now")
          })
 
         // FIXME: city names with a space break this
         // Get Wiki Info
         $http.get('http://nomadr-api.herokuapp.com/api/wiki/'+$scope.loggedInUser).success(function(response){
             $scope.wiki_data = response.wiki_content
-            console.log("hey we're in the wiki thing")
         }).error(function() {
             console.log("wiki data failed")
+        })
+
+        $http.get('http://nomadr-api.herokuapp.com/api/time/'+$scope.loggedInUser).success(function(response){
+            $scope.time = response.time
         })
 
     }).error(function(){
