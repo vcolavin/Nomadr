@@ -1,6 +1,12 @@
 ourApp.controller("SignUpController", ['$scope', '$http', '$route', '$location', '$cookies', function($scope, $http, $route, $location, $cookies){
 
-  console.log("Controller")
+    if ($cookies.user_id && $cookies.user_id !== "logged out") {
+        console.log($cookies.user_id)
+        // console.log("you were already logged in!")
+        $location.path('/home')
+    }
+
+  // console.log("Controller")
 
     $scope.background = "http://static.pexels.com/wp-content/uploads/2015/01/clouds-flying-high-4103.jpeg"
 
@@ -13,6 +19,9 @@ ourApp.controller("SignUpController", ['$scope', '$http', '$route', '$location',
             city:           self.user.city
         }).success(function(response, body) {
             console.log("Success!")
+            debugger
+            $cookies.user_id = response.user._id;
+
             $location.path('/home')
         });
     };
