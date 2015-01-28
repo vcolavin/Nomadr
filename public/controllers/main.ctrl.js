@@ -28,6 +28,7 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
 
         // FIXME: city names with a space break this
         // Get Wiki Info
+
         $http.get('http://nomadr-api.herokuapp.com/api/wiki/'+$scope.loggedInUser).success(function(response){
             $scope.wiki_data = response.wiki_content
         }).error(function() {
@@ -35,8 +36,15 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
         })
 
         $http.get('http://nomadr-api.herokuapp.com/api/time/'+$scope.loggedInUser).success(function(response){
-            $scope.time = response.time
-        })
+                $scope.time = response.time
+                setInterval(function(){
+                    $http.get('http://nomadr-api.herokuapp.com/api/time/'+$scope.loggedInUser).success(function(response){
+                        $scope.time = response.time
+                    })
+                },30000)
+            })
+
+
 
     }).error(function(){
         $scope.quote =  "Request Failed!"
