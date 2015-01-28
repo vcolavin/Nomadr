@@ -164,11 +164,24 @@ body {
   -webkit-text-stroke-color: black;*/
 }
 
-.logo h1 {
+.logo {
   font-family: RockSalt, sans-serif;
+}
+.logo h1 {
   margin:0;
   padding-top: 2%;
   font-size: 1.5em;
+}
+
+.logo h4{
+  font-size: 0.7em;
+
+  position: absolute;
+  display: block;
+  padding-right: 4%;
+  right: 0;
+  bottom: 0;
+  vertical-align: bottom;
 }
 
 .welcome h2 {
