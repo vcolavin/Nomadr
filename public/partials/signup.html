@@ -1,6 +1,7 @@
-<div class="vignette">
-
 <div class="background-splash" ng-style="{'background-image':'url({{background}})'}" ng-controller="SignUpController as signup">
+
+<div class="vignette"></div>
+
     <span class="welcome"><h2>Welcome to</h2></span>
     <div class="logo">
       <h1>NomadR</h1>
@@ -12,6 +13,4 @@
         <input type="text" placeholder="city" name="uCity" ng-model="signup.user.city" required><br>
         <input type="submit" value="go" ng-disabled="signUpForm.$invalid">
     </form>
-</div>
-
 </div>
