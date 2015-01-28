@@ -1,4 +1,5 @@
 <div class="background" ng-style="{'background-image':'url({{background}})'}" ng-controller="SignUpController as signup">
+
     <form ng-submit="signUp()" name="signUpForm">
         <input type="text" placeholder="Your name" name="uName" ng-model="signup.user.name" required><br>
         <input type="email" placeholder="email address" name="uEmail" ng-model="signup.user.email" required><br>
