@@ -16,10 +16,10 @@ ourApp.controller("SignUpController", ['$scope', '$http', '$route', '$location',
         $http.post("http://nomadr-api.herokuapp.com/api/users/", {
             name:           self.user.name,
             email:          self.user.email,
-            city:           self.user.city
+            city:           self.user.city,
+            departureDate:  self.user.departureDate,
         }).success(function(response, body) {
             console.log("Success!")
-            debugger
             $cookies.user_id = response.user._id;
 
             $location.path('/home')

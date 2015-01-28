@@ -99,10 +99,11 @@ input:focus{
    text-align: center;
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
     color: white;
     text-align: center;
     text-shadow: 1px 1px 6px black;
+    width:436px
 }
 
 .signin-form input[type="email"] {

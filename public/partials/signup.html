@@ -8,9 +8,10 @@
     </div>
 
     <form ng-submit="signUp()" name="signUpForm">
-        <input type="text" placeholder="Your name" name="uName" ng-model="signup.user.name" required><br>
-        <input type="email" placeholder="email address" name="uEmail" ng-model="signup.user.email" required><br>
-        <input type="text" placeholder="city" name="uCity" ng-model="signup.user.city" required><br>
+        <input type="text" placeholder="Your Name" name="uName" ng-model="signup.user.name" required><br>
+        <input type="email" placeholder="Email Address" name="uEmail" ng-model="signup.user.email" required><br>
+        <input type="text" placeholder="City" name="uCity" ng-model="signup.user.city" required><br>
+        <input style="text-align:center" value="Date" type="date" placeholder="Date" name="uDate" ng-model="signup.user.departureDate" required><br>
         <input type="submit" value="go" ng-disabled="signUpForm.$invalid">
     </form>
 </div>
