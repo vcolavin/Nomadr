@@ -1,4 +1,4 @@
-ourApp.controller("SignInController", ['$scope', '$http', '$route', '$cookies', function($scope, $http, $route, $cookies){
+ourApp.controller("SignInController", ['$scope', '$http', '$route', '$cookies', '$location', function($scope, $http, $route, $cookies, $location){
 
     $scope.background = "http://static.pexels.com/wp-content/uploads/2015/01/clouds-flying-high-4103.jpeg"
 
@@ -9,7 +9,7 @@ ourApp.controller("SignInController", ['$scope', '$http', '$route', '$cookies', 
               console.log("Sign In Success")
               console.log(response)
               $cookies.user_id = response._id;
-              console.log($cookies.user_id + "HEEEEYYY")
+              $location.path('/home')
         });
     };
 

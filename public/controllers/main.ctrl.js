@@ -1,6 +1,8 @@
-ourApp.controller("MainController", ['$scope', '$http', '$route', function($scope, $http, $route){
+ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', function($scope, $http, $route, $cookies){
 
-    $scope.loggedInUser = "54c71155d63f2abdf7000001"
+    console.log("COOKIE: "+$cookies.user_id)
+
+    $scope.loggedInUser = $cookies.user_id
 
     $http.get('http://nomadr-api.herokuapp.com/api/google_photo/'+$scope.loggedInUser).success(function(response){
         var maxNum = response.photos.length
@@ -11,7 +13,6 @@ ourApp.controller("MainController", ['$scope', '$http', '$route', function($scop
 // set this http get to user:
 
 // Get current user
-
     $http.get("http://nomadr-api.herokuapp.com/api/users/"+$scope.loggedInUser).success(function(response){
 
 // Trying to turn city into query string so I can plug it into URL!!!! (can I use JQUERY here?)
