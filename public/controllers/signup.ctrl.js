@@ -17,7 +17,7 @@ ourApp.controller("SignUpController", ['$scope', '$http', '$route', '$location',
             name:           self.user.name,
             email:          self.user.email,
             city:           self.user.city,
-            departureDate:  self.user.city
+            departureDate:  self.user.departureDate,
         }).success(function(response, body) {
             console.log("Success!")
             $cookies.user_id = response.user._id;
