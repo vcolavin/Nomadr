@@ -225,17 +225,30 @@ body {
 
     top: 80px;
     left: -140px;
-    width: 650px;
+    width: 670px;
 
-    font-size: 1em;
+    font-size: 0.7em;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    -webkit-transition: top 2s, width 2s, font 3s, opacity 1s;
+    -webkit-transition: top 1.2s, opacity 1s;
     /*background:rgba(48, 25, 25, .8);*/
+
 }
 
+/*TO DO.  CURRENTLY DOES NOT WORK*/
+/*.line-clamp::-webkit-scrollbar-track{
+  border: none;
+  opacity: 0;
+}
+*/
+/*html::-webkit-scrollbar-track{*/
+  /*border: none;*/
+  /*background-color: red !important;*/
+  /*opacity: 0;*/
+/*}*/
+
 .line-clamp:hover {
-    overflow : hidden;
+    overflow : hidden; /*change to scroll for effect*/
     text-overflow: ellipsis;
     /*top: -280px;*/
     top: -270px;
