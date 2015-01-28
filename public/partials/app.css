@@ -11,16 +11,16 @@
 /*======= TRANSITIONS =========*/
 @-webkit-keyframes fadein {
   from{ opacity: 0; }
-  to  { opacity: 10; }
+  to  { opacity: 1; }
 }
 
 /* consider adding .background-splash*/
 html, body, .background, .container-fluid {
-  -webkit-animation: fadein 4s;
+  -webkit-animation: fadein 1s;
 }
 
 form{
-  -webkit-animation: fadein 3s;
+  -webkit-animation: fadein 2s;
 }
 
 /*============================*/
