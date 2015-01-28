@@ -82,7 +82,6 @@ input[type="text"], input[type="email"], input[type="password"] {
 /*submit button*/
 input[type="submit"] {
   border: 1px solid #fff;
-  margin-left: 167px;
   background: green;
   width: 100px;
   height: 60px;
