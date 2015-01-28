@@ -9,18 +9,19 @@
 }
 
 /*======= TRANSITIONS =========*/
-html, body, .background {
-  -webkit-animation: fadein 3s;
+@-webkit-keyframes fadein {
+  from{ opacity: 0; }
+  to  { opacity: 10; }
+}
+
+html, body, .background, .container-fluid {
+  -webkit-animation: fadein 4s;
 }
 
 form{
   -webkit-animation: fadein 3s;
 }
 
-@-webkit-keyframes fadein {
-  from{ opacity: 0; }
-  to  { opacity: 1; }
-}
 /*============================*/
 
 html, body {
