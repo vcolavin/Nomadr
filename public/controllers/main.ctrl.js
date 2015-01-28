@@ -1,8 +1,4 @@
-var myModule = angular.module('app', ['ngSanitize'])
-
-
-
-myModule.controller("MainController", ['$scope', '$http', function($scope, $http){
+ourApp.controller("MainController", ['$scope', '$http', '$route', function($scope, $http, $route){
 
     $scope.loggedInUser = "54c71155d63f2abdf7000001"
 
@@ -14,7 +10,6 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 
 // set this http get to user:
 
-// http://nomadr-api.herokuapp.com
 // Get current user
 
     $http.get("http://nomadr-api.herokuapp.com/api/users/"+$scope.loggedInUser).success(function(response){
@@ -43,15 +38,15 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
         return num.toFixed()
     }
 
+// Get Wiki Info
     $http.get('http://nomadr-api.herokuapp.com/api/wiki/'+$scope.loggedInUser).success(function(response){
         $scope.wiki_data = response.wiki_content
         console.log($scope.wiki_data)
     })
 
-
-
-
-
+// Get Time Info
+    // $http.get('YOURtimeAPIURL')
+    //from the response, set a $scope.time = response
 
 //Page title
     $scope.title = "Nomadr";
@@ -62,18 +57,6 @@ myModule.controller("MainController", ['$scope', '$http', function($scope, $http
 
     // switching out the login
     var self = this;
-    $scope.tab = 'signup'
-    self.open = function(tab) {
-        self.tab = tab;
-    }
 
-    $scope.signUp = function() {
-        $http.post("http://nomadr-api.herokuapp.com/api/users/", {
-            name:           self.user.name,
-            email:          self.user.email,
-            city:           self.user.city
-        }).success(function(response, body) {
-            $scope.tab ='user'
-        });
-    };
+
 }]);

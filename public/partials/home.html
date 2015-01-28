@@ -1,0 +1,48 @@
+<div ng-controller="MainController">
+    <div class="container-fluid">
+        <!-- row 1 --> 
+        <div class="row">
+            <div class="col-sm-4"><!-- .col-sm-1 -->
+                <div class="clock">
+                    <p>Here is the clock!</p>
+                </div>
+            </div>
+            <div class="col-sm-4"><!-- .col-sm-2 -->
+                <div class="title">
+                    <h1>{{title}}</h1>
+                    <h4>Welcome, {{currentUser['name']}}</h4>
+                    <h5>You're planning to go to {{currentUser['city']}} on {{currentUser['date']}} (placeholder)</h5>
+                </div>
+            </div>
+            <div class="col-sm-4"><!-- .col-sm-3 -->
+                <div class="weather">
+                    <p>{{weather['name']}}</p>
+                    <img src="http://openweathermap.org/img/w/{{weather['weather'][0]['icon']}}.png">
+                    <p>{{weather['weather'][0]['main']}}</p>
+                    <p>{{farenheit(weather['main']['temp'])}} °F</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- row 2 -->
+        <div class="row">
+          <div class="col-sm-4"><!-- .col-sm-4 --></div>
+          <div class="col-sm-4"><!-- .col-sm-5 --></div>
+          <div class="col-sm-4"><!-- .col-sm-6 --></div>
+        </div>
+
+        <!-- row 3 -->
+        <div class="row">
+          <div class="col-sm-4"><!-- .col-sm-7 --></div>
+          <div class="col-sm-4">
+            <div class="line-clamp">
+                <p ng-bind-html="wiki_data"></p>
+               <!-- {{wiki_data}} -->
+            </div>
+          </div>
+          <div class="col-sm-4"><!-- .col-sm-9 --></div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
