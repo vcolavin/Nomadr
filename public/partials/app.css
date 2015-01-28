@@ -191,18 +191,27 @@ body {
     overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    top:0px;
     position: relative;
-    -webkit-line-clamp: 3;
+
+    top: 60px;
+    left: -200px;
+    width: 650px;
+
+    font-size: 1em;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    -webkit-transition: top 2s, opacity 1s;
+    -webkit-transition: top 2s, width 2s, font 3s, opacity 1s;
     /*background:rgba(48, 25, 25, .8);*/
 }
 
 .line-clamp:hover {
     overflow : hidden;
     text-overflow: ellipsis;
-    top: -258px;
+    /*top: -280px;*/
+    top: -270px;
+    left: -200px;
+    width: 650px;
+    font-size: 0.7em;
     display: -webkit-box;
     position: relative;
     -webkit-line-clamp: 9;
