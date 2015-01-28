@@ -219,6 +219,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  /*background: radial-gradient(circle, white, black);*/
   color:white;
   text-shadow: 2px 2px 8px black;
   font-family: QuattrocentoSans-Regular, sans-serif;
