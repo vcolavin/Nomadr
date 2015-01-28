@@ -1,0 +1,6 @@
+<div class="background" ng-style="{'background-image':'url({{background}})'}" ng-controller="SignInController as signin">
+    <form ng-submit="signIn()" name="signInForm">
+        <input type="email" placeholder="Login with email" name="uEmail" ng-model="signin.email" required><br>
+        <input type="submit" value="go" ng-disabled="signInForm.$invalid">
+    </form>
+</div>
