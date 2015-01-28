@@ -181,13 +181,13 @@ body {
 
 .logo h4{
   font-size: 0.7em;
-
   position: absolute;
   display: block;
-  padding-right: 4%;
-  right: 0;
-  bottom: 0;
+  /*padding-right: 4%;*/
+  right: 20;
+  bottom: 40;
   vertical-align: bottom;
+  margin-right: 3%;
 }
 
 .welcome h2 {
@@ -208,10 +208,15 @@ body {
 
 .weather {
   float:right;
+  margin-top: 3%;
+  margin-right: 3%;
 }
 
 .clock {
   float:left;
+  margin-top: 3%;
+  margin-left: 3%;
+}
 }
 
 .title {
@@ -220,11 +225,11 @@ body {
 }
 
 .title h4 {
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .title h5 {
-  font-size: .5em;
+  font-size: .6em;
 }
 
 
@@ -235,13 +240,12 @@ body {
 }
 
 .row {
-  padding: 0%, 2%, 10%,2%;
   /*min-height: 33%;*/
 }
 
 .col-sm-4 {
   /*provides grid view*/
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   height: 33vh;
   width: 33vw;
   /*min-height: 100%;*/
@@ -250,6 +254,7 @@ body {
 .col-sm-4 img {
   min-width: 100px;
   /*border: 1px solid blue;*/
+  -webkit-filter: grayscale(100%);
 }
 
 .line-clamp {
@@ -401,6 +406,8 @@ body {
   font-size: 0.6em;
   color: white;
   opacity: 1;
+  margin-bottom: 7%;
+  margin-left: 3%;
 }
 
 [ng-click]{
