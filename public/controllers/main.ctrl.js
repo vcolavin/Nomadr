@@ -1,4 +1,4 @@
-ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', function($scope, $http, $route, $cookies){
+ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$location', function($scope, $http, $route, $cookies, $location){
 
     console.log("COOKIE: "+$cookies.user_id)
 
@@ -44,6 +44,11 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', fun
     $scope.farenheit = function(kelvin) {
         var num = 1.8 * (kelvin - 273) + 32
         return num.toFixed()
+    }
+
+    $scope.logout = function(){
+        $cookies.user_id = "logged out"
+        $location.path('/')
     }
 
 
