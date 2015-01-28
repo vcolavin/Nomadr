@@ -23,9 +23,9 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', fun
             var maxNum = response.photos.length
             var randNum = (Math.floor(Math.random()*(maxNum - 0) + 0))
             $scope.bgImg = response.photos[randNum]
+            // $scope.bgImg = 'https://lh3.googleusercontent.com/-GaF3h1A_Ui0/Uqz-XwiPxTI/AAAAAAAA620/n5JeS7vgQI4/s1600-w1600/Paris%252C%2BLa%2BMosqu%25C3%25A9e'
             console.log("we're in the photo now")
-            debugger
-        })
+         })
 
         // FIXME: city names with a space break this
         // Get Wiki Info
