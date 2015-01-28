@@ -1,4 +1,4 @@
-ourApp.controller("SignUpController", ['$scope', '$http', '$route', '$location', function($scope, $http, $route, $location){
+ourApp.controller("SignUpController", ['$scope', '$http', '$route', '$location', '$cookies', function($scope, $http, $route, $location, $cookies){
 
   console.log("Controller")
 

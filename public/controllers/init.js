@@ -1,4 +1,4 @@
-var ourApp = angular.module('ourApp', ['ngSanitize', 'ngRoute'])
+var ourApp = angular.module('ourApp', ['ngSanitize', 'ngRoute', 'ngCookies'])
 
 ourApp.config(['$routeProvider',
   function($routeProvider) {
