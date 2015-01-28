@@ -11,16 +11,16 @@
 /*======= TRANSITIONS =========*/
 @-webkit-keyframes fadein {
   from{ opacity: 0; }
-  to  { opacity: 10; }
+  to  { opacity: 1; }
 }
 
 /* consider adding .background-splash*/
 html, body, .background, .container-fluid {
-  -webkit-animation: fadein 4s;
+  -webkit-animation: fadein 1s;
 }
 
 form{
-  -webkit-animation: fadein 3s;
+  -webkit-animation: fadein 2s;
 }
 
 /*============================*/
@@ -164,11 +164,24 @@ body {
   -webkit-text-stroke-color: black;*/
 }
 
-.logo h1 {
+.logo {
   font-family: RockSalt, sans-serif;
+}
+.logo h1 {
   margin:0;
   padding-top: 2%;
   font-size: 1.5em;
+}
+
+.logo h4{
+  font-size: 0.7em;
+
+  position: absolute;
+  display: block;
+  padding-right: 4%;
+  right: 0;
+  bottom: 0;
+  vertical-align: bottom;
 }
 
 .welcome h2 {
@@ -212,7 +225,8 @@ body {
 }
 
 .col-sm-4 {
-  border: 1px solid red;
+  /*provides grid view*/
+/*  border: 1px solid red;*/
   height: 33vh;
   width: 33vw;
   /*min-height: 100%;*/
@@ -226,17 +240,34 @@ body {
 
     top: 80px;
     left: -140px;
-    width: 650px;
+    width: 670px;
 
-    font-size: 1em;
+    font-size: 0.7em;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    -webkit-transition: top 2s, width 2s, font 3s, opacity 1s;
+    -webkit-transition: top 1.2s, opacity 1s;
     /*background:rgba(48, 25, 25, .8);*/
 }
 
+.line-clamp a:link, .line-clamp a:visited, .line-clamp a:hover, .line-clamp a:active{
+  color:white;
+  text-decoration: none;
+}
+
+/*TO DO.  CURRENTLY DOES NOT WORK*/
+/*.line-clamp::-webkit-scrollbar-track{
+  border: none;
+  opacity: 0;
+}
+*/
+/*html::-webkit-scrollbar-track{*/
+  /*border: none;*/
+  /*background-color: red !important;*/
+  /*opacity: 0;*/
+/*}*/
+
 .line-clamp:hover {
-    overflow : hidden;
+    overflow : hidden; /*change to scroll for effect*/
     text-overflow: ellipsis;
     /*top: -280px;*/
     top: -270px;
@@ -331,11 +362,27 @@ body {
   -o-background-size: cover;
   background-size: cover;
   /*background: radial-gradient(circle, #aaa, #000);*/
-  background: radial-gradient(circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  background: radial-gradient(circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
   height:100vh;
   width:100vw;
-  opacity: 1;
+  opacity: 0.4;
   z-index: -1;
   display: block;
   position: fixed;
+}
+
+.logout{
+  position: absolute;
+  display: block;
+  padding-left: 4%;
+  left: 0;
+  bottom: 0;
+  vertical-align: bottom;
+  font-size: 0.6em;
+  color: white;
+  opacity: 1;
+}
+
+[ng-click]{
+  cursor: pointer;
 }
