@@ -212,7 +212,8 @@ body {
 }
 
 .col-sm-4 {
-  border: 1px solid red;
+  /*provides grid view*/
+/*  border: 1px solid red;*/
   height: 33vh;
   width: 33vw;
   /*min-height: 100%;*/
@@ -355,4 +356,20 @@ body {
   z-index: -1;
   display: block;
   position: fixed;
+}
+
+.logout{
+  position: absolute;
+  display: block;
+  padding-left: 4%;
+  left: 0;
+  bottom: 0;
+  vertical-align: bottom;
+  font-size: 0.6em;
+  color: white;
+  opacity: 1;
+}
+
+[ng-click]{
+  cursor: pointer;
 }
