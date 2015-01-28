@@ -6,8 +6,8 @@
       <h1>NomadR</h1>
     </div>
 
-    <form ng-submit="signIn()" name="signInForm">
-        <input type="email" placeholder="Login with email" name="uEmail" ng-model="signin.email" required><br>
+    <form class="signin-form" ng-submit="signIn()" name="signInForm">
+        <input type="email" placeholder="Login with email" name="uEmail" ng-model="signin.email" required>
         <input type="submit" value="go" ng-disabled="signInForm.$invalid">
     </form>
 </div>

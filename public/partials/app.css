@@ -104,6 +104,10 @@ input[type="text"], input[type="email"], input[type="password"] {
     text-shadow: 1px 1px 6px black;
 }
 
+.signin-form input[type="email"] {
+  margin-left: 100px;
+}
+
 /*submit button*/
 input[type="submit"] {
   border: 1px solid #fff;
@@ -117,6 +121,7 @@ input[type="submit"] {
   text-shadow: 1px 1px 5px #000;
   background: rgba(48, 135, 43, 0);
   opacity: 0;
+  vertical-align: top;
   /*visibility: hidden;*/
 
   -webkit-transition: background 1s, border-color 1s, opacity 1s, hover 1s, box-shadow 1s, border-radius 1s, width 0.5s, height 0.5s, -webkit-transform 0.1s;
