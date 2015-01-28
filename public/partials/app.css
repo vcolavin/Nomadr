@@ -34,6 +34,12 @@ body {
   margin:0;
 }
 
+/*======= FONTS =========*/
+
+
+/*============================*/
+
+
 /*FIXME*/
 /*.splash_button_signin, .splash_button_signup{
   -webkit-animation: fadein 4s;
@@ -213,6 +219,14 @@ body {
   text-align: center;
 }
 
+.title h4 {
+  font-size: 1em;
+}
+
+.title h5 {
+  font-size: .5em;
+}
+
 
 
 .container-fluid {
@@ -221,15 +235,21 @@ body {
 }
 
 .row {
+  padding: 0%, 2%, 10%,2%;
   /*min-height: 33%;*/
 }
 
 .col-sm-4 {
   /*provides grid view*/
-/*  border: 1px solid red;*/
+  border: 1px solid red;
   height: 33vh;
   width: 33vw;
   /*min-height: 100%;*/
+}
+
+.col-sm-4 img {
+  min-width: 100px;
+  /*border: 1px solid blue;*/
 }
 
 .line-clamp {
