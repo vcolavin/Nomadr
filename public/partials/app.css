@@ -193,8 +193,8 @@ body {
     display: -webkit-box;
     position: relative;
 
-    top: 60px;
-    left: -200px;
+    top: 80px;
+    left: -140px;
     width: 650px;
 
     font-size: 1em;
@@ -209,8 +209,8 @@ body {
     text-overflow: ellipsis;
     /*top: -280px;*/
     top: -270px;
-    left: -200px;
-    width: 650px;
+    left: -140px;
+    width: 670px;
     font-size: 0.7em;
     display: -webkit-box;
     position: relative;
