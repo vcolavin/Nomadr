@@ -232,7 +232,11 @@ body {
     -webkit-box-orient: vertical;
     -webkit-transition: top 1.2s, opacity 1s;
     /*background:rgba(48, 25, 25, .8);*/
+}
 
+.line-clamp a:link, .line-clamp a:visited, .line-clamp a:hover, .line-clamp a:active{
+  color:white;
+  text-decoration: none;
 }
 
 /*TO DO.  CURRENTLY DOES NOT WORK*/
