@@ -8,6 +8,23 @@
     src: url('../vendor/QuattrocentoSans-Regular.ttf');
 }
 
+/*======= TRANSITIONS =========*/
+@-webkit-keyframes fadein {
+  from{ opacity: 0; }
+  to  { opacity: 10; }
+}
+
+/* consider adding .background-splash*/
+html, body, .background, .container-fluid {
+  -webkit-animation: fadein 4s;
+}
+
+form{
+  -webkit-animation: fadein 3s;
+}
+
+/*============================*/
+
 html, body {
   min-height: 100%;
 }
@@ -16,6 +33,20 @@ body {
   top:0;
   margin:0;
 }
+
+/*FIXME*/
+/*.splash_button_signin, .splash_button_signup{
+  -webkit-animation: fadein 4s;
+  animation: fadein 4s;
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+}*/
+
+
+/*.container-fluid{
+  margin-top:0;
+}
+*/
 
 /* LOGIN FORM*/
 form {
@@ -26,7 +57,7 @@ form {
 }
 
 form input {
-      background:rgba(48, 25, 25, .2);
+  background:rgba(48, 25, 25, .2);
 
   border: none;
   margin-top: 10px;
@@ -74,14 +105,16 @@ input[type="text"], input[type="email"], input[type="password"] {
     text-shadow: 1px 1px 6px black;
 }
 
+.signin-form input[type="email"] {
+  margin-left: 100px;
+}
+
 /*submit button*/
 input[type="submit"] {
   border: 1px solid #fff;
-  margin-left: 167px;
   background: green;
   width: 100px;
   height: 60px;
-  border-radius: 10%;
   box-shadow: 2px 2px 10px #000;
   color: #fff;
   font-size: 0.8em;
@@ -89,6 +122,7 @@ input[type="submit"] {
   text-shadow: 1px 1px 5px #000;
   background: rgba(48, 135, 43, 0);
   opacity: 0;
+  vertical-align: top;
   /*visibility: hidden;*/
 
   -webkit-transition: background 1s, border-color 1s, opacity 1s, hover 1s, box-shadow 1s, border-radius 1s, width 0.5s, height 0.5s, -webkit-transform 0.1s;
@@ -187,18 +221,35 @@ body {
     overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    position: relative;
+
+    top: 80px;
+    left: -140px;
+    width: 650px;
+
+    font-size: 1em;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+    -webkit-transition: top 2s, width 2s, font 3s, opacity 1s;
+    /*background:rgba(48, 25, 25, .8);*/
 }
 
 .line-clamp:hover {
     overflow : hidden;
     text-overflow: ellipsis;
-    top: -258px;
+    /*top: -280px;*/
+    top: -270px;
+    left: -140px;
+    width: 670px;
+    font-size: 0.7em;
     display: -webkit-box;
     position: relative;
     -webkit-line-clamp: 9;
     -webkit-box-orient: vertical;
+}
+
+.line-clamp:hover > .modal {
+  opacity: 0.7;
 }
 
 .background {
@@ -206,12 +257,30 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  /*background: radial-gradient(circle, white, black);*/
+  color:white;
+  text-shadow: 2px 2px 8px black;
+  font-family: QuattrocentoSans-Regular, sans-serif;
+  /*height:100vh;*/
+  width:100vw;
+  text-align: center;
+  opacity:0.9;
+  /*z-index: 0;*/
+}
+
+.background-splash {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*background: radial-gradient(circle, white, black);*/
   color:white;
   text-shadow: 2px 2px 8px black;
   font-family: QuattrocentoSans-Regular, sans-serif;
   height:100vh;
   width:100vw;
   text-align: center;
+  opacity:0.8;
 }
 
 /*SPLASH PAGE*/
@@ -225,7 +294,7 @@ body {
 
   box-shadow: 0px 3px 19px #000;
 
-  -webkit-transition: -webkit-transform 0.2s, background 1.0s;
+  -webkit-transition: -webkit-transform 0.2s, background 1.5s;
 }
 
 .splash_button_signin:hover, .splash_button_signup:hover{
@@ -239,4 +308,33 @@ body {
 }
 .splash_button_signup:active{
   -webkit-transform: translate(5px, 5px);
+}
+
+.modal{
+  background: #000;
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.1;
+  -webkit-transition: opacity 1s;
+}
+
+.line-clamp:hover > .modal {
+  opacity: 0.6;
+}
+
+.vignette{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*background: radial-gradient(circle, #aaa, #000);*/
+  background: radial-gradient(circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  height:100vh;
+  width:100vw;
+  opacity: 1;
+  z-index: -1;
+  display: block;
+  position: fixed;
 }
