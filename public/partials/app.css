@@ -59,7 +59,7 @@ body {
   width: 100%;
   z-index: 1;
   -webkit-animation: fadeout 1s forwards;
-  -webkit-animation-delay: 1s;
+  -webkit-animation-delay: 2s;
 }
 
 /*FIXME*/
