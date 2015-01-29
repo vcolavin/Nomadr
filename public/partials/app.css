@@ -263,7 +263,7 @@ body {
 
 .col-sm-4 {
   /*provides grid view*/
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   height: 30vh;
   width: 33vw;
   /*min-height: 100%;*/
