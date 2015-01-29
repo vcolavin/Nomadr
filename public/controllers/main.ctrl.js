@@ -13,11 +13,18 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
 
         $scope.leaveDate = moment(new Date($scope.currentUser.departureDate)).format("MMMM Do, YYYY")
         $scope.fromNow = moment(new Date($scope.currentUser.departureDate)).fromNow()
-        // FIXME: put this on the back end!
-        //Get Weather
-        $http.get('http://api.openweathermap.org/data/2.5/weather?q='+$scope.currentUser.city).success(function(response){
-            $scope.weather = response
-        })
+
+        //Get Weather (from weather api, not ours)
+        // $http.get('http://localhost:9090/api/weather/'+$scope.loggedInUser).success(function(response){
+        //     $scope.weather = response.weather
+        //     console.log(response.weather.weather[0].main)
+        //     console.log(weather['weather'][0]['main'])
+        // })
+
+        // Get weather
+        $http.get('http://nomadr-api.herokuapp.com/api/weather/'+$scope.loggedInUser).success(function(response){
+            $scope.weather = response.weather
+         })
 
         //Get photo
         $http.get('http://nomadr-api.herokuapp.com/api/google_photo/'+$scope.loggedInUser).success(function(response){
