@@ -31,7 +31,8 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
 
         // Get Wiki Info
         $http.get('http://nomadr-api.herokuapp.com/api/wiki/'+$scope.loggedInUser).success(function(response){
-            $scope.wiki_data = response.wiki_content
+            $scope.wiki_data = response.wiki_content.replace(/\(.*\)/, "")
+            console.log(response.wiki_content)
         }).error(function() {
             console.log("wiki data failed")
         })
