@@ -22,9 +22,9 @@
             <div class="col-sm-4"><!-- .col-sm-3 -->
                 <div class="weather">
                    <!--  <p>{{weather['name']}}</p> -->
-                    <p>{{farenheit(weather['main']['temp'])}} °F</p>
+                    <p>{{farenheit(weather.main.temp)}} °F</p>
                      <img src="http://openweathermap.org/img/w/{{weather['weather'][0]['icon']}}.png">
-                    <h4>{{weather['weather'][0]['main']}}</h4>
+                    <h4>{{weather.weather[0].main}}</h4>
                 </div>
             </div>
         </div>
@@ -38,7 +38,8 @@
 
         <!-- row 3 -->
         <div class="row">
-          <div class="col-sm-4"><span class="logout"><p ng-click="logout()">logout</p></span></div>
+          <div class="col-sm-4">
+            <span class="logout"><p ng-click="logout()">logout</p></span></div>
           <div class="col-sm-4">
             <div class="line-clamp">
               <a href="#">
@@ -51,6 +52,7 @@
 
           </div>
           <div class="col-sm-4"><span class="logo"><h4>NomadR</h4></span></div>
+            <div class="attribution">attribution</div>
         </div>
     </div>
 </div>
