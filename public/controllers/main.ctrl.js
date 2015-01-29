@@ -39,8 +39,9 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
 
         //Get time
         $http.get('http://nomadr-api.herokuapp.com/api/time/'+$scope.loggedInUser).success(function(response){
-                $scope.time = response.time
-                // console.log("TIME: "+moment("20:20"))
+                $scope.time = moment(response.time, "hh:mm").format("ddd, h:mm A")
+
+                // console.log("TIME: "+moment("23:55", "hh:mm").format("ddd, h:mm A"))
 
                 setInterval(function(){
                     $http.get('http://nomadr-api.herokuapp.com/api/time/'+$scope.loggedInUser).success(function(response){
