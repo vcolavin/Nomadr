@@ -245,7 +245,7 @@ body {
 
 .col-sm-4 {
   /*provides grid view*/
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   height: 33vh;
   width: 33vw;
   /*min-height: 100%;*/
@@ -413,11 +413,12 @@ body {
 .attribution {
   font-size: 0.4em;
   font-style: italic;
-  /*position: absolute;
-  bottom: 0;
-  margin-left: auto;
-  margin-right: auto;*/
   text-align: center;
+}
+
+.attribution a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: #FFF;
 }
 
 [ng-click]{
