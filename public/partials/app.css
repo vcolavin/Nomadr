@@ -39,6 +39,7 @@ form{
 
 html, body {
   min-height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -262,15 +263,15 @@ body {
 
 .col-sm-4 {
   /*provides grid view*/
-  /*border: 1px solid red;*/
-  height: 33vh;
+  border: 1px solid red;
+  height: 30vh;
   width: 33vw;
   /*min-height: 100%;*/
 }
 
 .col-sm-4 img {
   min-width: 100px;
-  /*border: 1px solid blue;*/
+ /* border: 1px solid blue;*/
   -webkit-filter: grayscale(100%);
 }
 
@@ -427,6 +428,7 @@ body {
   font-size: 0.4em;
   font-style: italic;
   text-align: center;
+  color: #FFF;
 }
 
 .attribution a:link, a:visited, a:hover, a:active {
