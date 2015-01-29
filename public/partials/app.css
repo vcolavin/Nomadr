@@ -1,3 +1,4 @@
+/*======= FONTS =========*/
 @font-face {
     font-family: RockSalt;
     src: url('../vendor/RockSalt.ttf');
@@ -14,13 +15,24 @@
   to  { opacity: 1; }
 }
 
+@-webkit-keyframes fadeout {
+  from{ opacity: 1; }
+  to  { opacity: 0; z-index: 0;}
+}
+
 /* consider adding .background-splash*/
+html, body, .background, .container-fluid {
+  /*-webkit-animation: fadein 1s;*/
+}
+
 html, body, .background, .container-fluid {
   -webkit-animation: fadein 1s;
 }
 
+
+
 form{
-  -webkit-animation: fadein 2s;
+  -webkit-animation: fadein 1s forwards;
 }
 
 /*============================*/
@@ -34,11 +46,16 @@ body {
   margin:0;
 }
 
-/*======= FONTS =========*/
-
-
-/*============================*/
-
+.white_div {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  -webkit-animation: fadeout 1s forwards;
+  -webkit-animation-delay: 1s;
+}
 
 /*FIXME*/
 /*.splash_button_signin, .splash_button_signup{
