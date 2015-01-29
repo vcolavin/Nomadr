@@ -374,7 +374,7 @@ body {
 }
 
 .line-clamp:hover + :not(.line-clamp){
-  opacity: 0.3;
+  opacity: 0.7;
 }
 
 .vignette{
