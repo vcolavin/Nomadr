@@ -12,7 +12,7 @@ ourApp.controller("SignInController", ['$scope', '$http', '$route', '$cookies', 
 
     // FIXME: This is case sensitive. That's bad.
     $scope.signIn = function() {
-          $http.get("http://nomadr-api.herokuapp.com/api/emails/" + self.email).success(function(response, body) {
+          $http.get("http://localhost:9090/api/emails/" + self.email).success(function(response, body) {
               console.log("Sign In Success")
               console.log(response)
               $cookies.user_id = response._id;
