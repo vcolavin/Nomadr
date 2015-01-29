@@ -411,14 +411,13 @@ body {
 }
 
 .attribution {
-  text-align: center;
-  font-size: 0.5em;
+  font-size: 0.4em;
   font-style: italic;
-  position: absolute;
-  display: block;
+  /*position: absolute;
   bottom: 0;
-  vertical-align: bottom;
-  margin-right: 3%;
+  margin-left: auto;
+  margin-right: auto;*/
+  text-align: center;
 }
 
 [ng-click]{
