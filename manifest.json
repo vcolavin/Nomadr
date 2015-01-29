@@ -4,12 +4,18 @@
   "version"         : "0.1",
   "description"     : "Every new tab is a step forward to living your dreams.",
   "chrome_url_overrides"  : { "newtab": "/public/index.html" },
-  "content_security_policy" : "script-src 'self' 'unsafe-eval' https://ajax.googleapis.com https://maxcdn.bootstrapcdn.com https://api.github.com; object-src 'self'",
+  "content_security_policy" : "script-src 'self' 'unsafe-eval'; object-src 'self'",
 
   "content_scripts" : [
     {
       "matches" : ["<all_urls>"],
-      "js"      : ["./app/main.ctrl.js"]
+      "js"      : [
+        "public/controllers/init.js",
+        "public/controllers/main.ctrl.js",
+        "public/controllers/signin.ctrl.js",
+        "public/controllers/signup.ctrl.js",
+        "public/controllers/splash.ctrl.js"
+      ]
     }
   ]
 }
