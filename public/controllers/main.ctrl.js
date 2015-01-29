@@ -55,7 +55,7 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
 
                 setInterval(function(){
                     $http.get('http://nomadr-api.herokuapp.com/api/time/'+$scope.loggedInUser).success(function(response){
-                        $scope.time = response.time
+                        $scope.time = moment(response.time, "hh:mm").format("ddd, h:mm A")
                     })
                 },30000)
 
