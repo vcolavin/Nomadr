@@ -22,9 +22,9 @@
             <div class="col-sm-4"><!-- .col-sm-3 -->
                 <div class="weather">
                    <!--  <p>{{weather['name']}}</p> -->
-                    <p>{{farenheit(weather['main']['temp'])}} °F</p>
+                    <p>{{farenheit(weather.main.temp)}} °F</p>
                      <img src="http://openweathermap.org/img/w/{{weather['weather'][0]['icon']}}.png">
-                    <h4>{{weather['weather'][0]['main']}}</h4>
+                    <h4>{{weather.weather[0].main}}</h4>
                 </div>
             </div>
         </div>
