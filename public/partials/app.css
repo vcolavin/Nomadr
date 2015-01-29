@@ -20,6 +20,11 @@
   to  { opacity: 0; z-index: 0;}
 }
 
+@-webkit-keyframes loadingdelay {
+  from{ opacity:1;}
+  to  { opacity:0; display:none;}
+}
+
 /* consider adding .background-splash*/
 html, body, .background, .container-fluid {
   /*-webkit-animation: fadein 1s;*/
@@ -35,6 +40,23 @@ form{
   -webkit-animation: fadein 1s forwards;
 }
 
+#fa_spinner {
+}
+
+.loading{
+  font-size: 3em;
+  opacity:1;
+  z-index: 2;
+  color: black;
+  position:fixed;
+  display:block;
+  -webkit-animation: loadingdelay 3s forwards;
+}
+/*.fa .fa-spinner .fa-spin {
+  -webkit-animation: fadeout 2.5s forwards;
+
+}
+*/
 /*============================*/
 
 html, body {
