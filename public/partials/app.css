@@ -47,9 +47,11 @@ form{
   font-size: 3em;
   opacity:1;
   z-index: 2;
-  color: black;
+  color: green;
   position:fixed;
   display:block;
+  padding-top: 35%;
+  padding-left: 43%;
   -webkit-animation: loadingdelay 3s forwards;
 }
 /*.fa .fa-spinner .fa-spin {
