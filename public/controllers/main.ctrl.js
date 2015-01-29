@@ -19,12 +19,23 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
             $scope.weather = response
         })
 
-        //Get photo
-        $http.get('http://nomadr-api.herokuapp.com/api/google_photo/'+$scope.loggedInUser).success(function(response){
-            console.log(response)
-            var maxNum = response.photos.length
-            var randNum = (Math.floor(Math.random()*(maxNum - 0) + 0))
-            $scope.bgImg = response.photos[randNum]
+        //Get GOOGLE photo
+        // $http.get('http://nomadr-api.herokuapp.com/api/google_photo/'+$scope.loggedInUser).success(function(response){
+        //     // console.log(response)
+        //     var maxNum = response.photos.length
+        //     var randNum = (Math.floor(Math.random()*(maxNum - 0) + 0))
+        //     $scope.bgImg = response.photos[randNum]
+        //  })
+
+        //Get PANARAMIO photo:
+        $http.get('http://nomadr-api.herokuapp.com/api/panaramio/'+$scope.loggedInUser).success(function(response){
+            // console.log(response)
+            var maxNum          = response.photos.length
+            var randNum         = (Math.floor(Math.random()*(maxNum - 0) + 0))
+            $scope.bgImg        = response.photos[randNum].photo_url
+            $scope.titleImg     = response.photos[randNum].photo_title
+            $scope.ownerImg     = response.photos[randNum].owner_name
+            $scope.imgOwnerUrl  = response.photos[randNum].owner_url
          })
 
         // FIXME: city names with a space break this
@@ -38,7 +49,7 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
         //Get time
         $http.get('http://nomadr-api.herokuapp.com/api/time/'+$scope.loggedInUser).success(function(response){
                 $scope.time = response.time
-                console.log("TIME: "+moment("20:20"))
+                // console.log("TIME: "+moment("20:20"))
 
                 setInterval(function(){
                     $http.get('http://nomadr-api.herokuapp.com/api/time/'+$scope.loggedInUser).success(function(response){
