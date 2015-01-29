@@ -23,7 +23,7 @@
                 <div class="title">
                     <h1>{{title}}</h1>
                     <h4>Welcome, {{currentUser['name']}}</h4>
-                    <h5>You're planning to go to {{currentUser['city']}} {{fromNow}}!</h5>
+                    <h5>You're planning to go to {{currentUser['city']}} {{fromNow}}.</h5>
                 </div>
             </div>
             <div class="col-sm-4"><!-- .col-sm-3 -->
@@ -49,10 +49,16 @@
             <span class="logout"><p ng-click="logout()">logout</p></span></div>
           <div class="col-sm-4">
             <div class="line-clamp">
-              <a href="http://en.wikipedia.org/wiki/{{currentUser.city}}">
-                <p ng-bind-html="wiki_data"></p>
+              <a ng-show="!withinTwoMonths" href="http://en.wikipedia.org/wiki/{{currentUser.city}}">
+              <p ng-bind-html="wiki_data"></p>
                <!-- {{wiki_data}} -->
              </a>
+              <div ng-show="withinTwoMonths">
+                  <h2 ng-show="eventList.length !== 0">Events</h2>
+                  <div ng-repeat="obj in eventList">
+                    <p><a href="{{obj.url}}">{{obj.title}}</a></p>
+                  </div>
+              </div>
             </div>
 
             <div class="modal"></div>

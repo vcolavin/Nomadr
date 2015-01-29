@@ -14,6 +14,18 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
         $scope.leaveDate = moment(new Date($scope.currentUser.departureDate)).format("MMMM Do, YYYY")
         $scope.fromNow = moment(new Date($scope.currentUser.departureDate)).fromNow()
 
+        //Get events
+        $http.get('http://nomadr-api.herokuapp.com/api/events/'+$scope.loggedInUser).success(function(response){
+            console.log(response.events)
+            $scope.eventList = response.events
+         })
+
+        if (moment($scope.currentUser.departureDate).diff(moment(new Date()), 'months') <= 2) {
+            $scope.withinTwoMonths = true
+        } else {
+            $scope.withinTwoMonths = false
+        }
+
         // Get weather
         $http.get('http://nomadr-api.herokuapp.com/api/weather/'+$scope.loggedInUser).success(function(response){
             $scope.weather = response.weather
@@ -32,7 +44,7 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
         // Get Wiki Info
         $http.get('http://nomadr-api.herokuapp.com/api/wiki/'+$scope.loggedInUser).success(function(response){
             $scope.wiki_data = response.wiki_content.replace(/\(.*\)/, "")
-            console.log(response.wiki_content)
+            // console.log(response.wiki_content)
         }).error(function() {
             console.log("wiki data failed")
         })
@@ -57,7 +69,7 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
 
     $scope.farenheit = function(kelvin) {
         var num = 1.8 * (kelvin - 273) + 32
-        console.log("farenheit is being called")
+        // console.log("farenheit is being called")
         return num.toFixed()
     }
 

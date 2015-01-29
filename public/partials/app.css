@@ -304,6 +304,10 @@ body {
   -webkit-filter: grayscale(100%);
 }
 
+.line-clamp h2 {
+  text-decoration: underline;
+}
+
 .line-clamp {
     overflow : hidden;
     text-overflow: ellipsis;
