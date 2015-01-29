@@ -20,8 +20,6 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
             $scope.withinTwoMonths = false
         }
 
-        debugger
-
 
 
         // Get weather
