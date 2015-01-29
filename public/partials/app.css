@@ -245,7 +245,7 @@ body {
 
 .col-sm-4 {
   /*provides grid view*/
-  /*border: 1px solid red;*/
+  border: 1px solid red;
   height: 33vh;
   width: 33vw;
   /*min-height: 100%;*/
@@ -408,6 +408,17 @@ body {
   opacity: 1;
   margin-bottom: 7%;
   margin-left: 3%;
+}
+
+.attribution {
+  text-align: center;
+  font-size: 0.5em;
+  font-style: italic;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  vertical-align: bottom;
+  margin-right: 3%;
 }
 
 [ng-click]{
