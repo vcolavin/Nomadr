@@ -42,6 +42,10 @@ html, body {
   overflow: hidden;
 }
 
+body{
+  margin-top: -56px;
+}
+
 body {
   top:0;
   margin:0;
@@ -55,7 +59,7 @@ body {
   width: 100%;
   z-index: 1;
   -webkit-animation: fadeout 1s forwards;
-  -webkit-animation-delay: 1s;
+  -webkit-animation-delay: 1.5s;
 }
 
 /*FIXME*/
