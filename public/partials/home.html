@@ -53,8 +53,12 @@
               <p ng-bind-html="wiki_data"></p>
                <!-- {{wiki_data}} -->
              </a>
-              <ul ng-show="withinTwoMonths" ng-repeat="obj in eventList">  <li><a href="{{obj.url}}">{{obj.title}}</a></li>
-              </ul>
+              <div ng-show="withinTwoMonths">
+                  <h2 ng-show="eventList.length !== 0">Events</h2>
+                  <div ng-repeat="obj in eventList">
+                    <p><a href="{{obj.url}}">{{obj.title}}</a></p>
+                  </div>
+              </div>
             </div>
 
             <div class="modal"></div>
