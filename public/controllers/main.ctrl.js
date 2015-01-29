@@ -13,19 +13,15 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
 
         $scope.leaveDate = moment(new Date($scope.currentUser.departureDate)).format("MMMM Do, YYYY")
         $scope.fromNow = moment(new Date($scope.currentUser.departureDate)).fromNow()
-        debugger
 
-        if (moment(new Date()).diff(moment($scope.currentUser.departureDate), 'months') <= 2) {
+        if (moment($scope.currentUser.departureDate).diff(moment(new Date()), 'months') <= 2) {
             $scope.withinTwoMonths = true
         } else {
             $scope.withinTwoMonths = false
         }
 
-        // if ($scope.currentUser.departureDate - new Date() < 2 months)
-        //     $scope.withinTwoMonths = true
-        // } else {
-        //     $scope.withinTwoMonths = false
-        // }
+        debugger
+
 
 
         // Get weather
