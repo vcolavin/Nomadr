@@ -16,8 +16,8 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
 
         //Get events
         $http.get('http://nomadr-api.herokuapp.com/api/events/'+$scope.loggedInUser).success(function(response){
-            console.log(response)
-            $scope.eventList = "yeah"
+            console.log(response.events)
+            $scope.eventList = response.events
          })
 
         if (moment($scope.currentUser.departureDate).diff(moment(new Date()), 'months') <= 2) {
