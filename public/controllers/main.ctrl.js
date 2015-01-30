@@ -33,6 +33,7 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
 
         //Get PANARAMIO photo:
         $http.get('http://localhost:9090/api/panaramio/'+$scope.loggedInUser).success(function(response){
+            console.log(response.photos)
             var maxNum          = response.photos.length
             var randNum         = (Math.floor(Math.random()*(maxNum - 0) + 0))
             $scope.bgImg        = response.photos[randNum].photo_url
@@ -44,7 +45,7 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
         // Get Wiki Info
         $http.get('http://localhost:9090/api/wiki/'+$scope.loggedInUser).success(function(response){
             $scope.wiki_data = response.wiki_content.replace(/\(.*\)/, "")
-            console.log(response.wiki_content)
+            // console.log(response.wiki_content)
         }).error(function() {
             console.log("wiki data failed")
         })

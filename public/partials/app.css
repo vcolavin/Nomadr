@@ -50,8 +50,8 @@ form{
   color: green;
   position:fixed;
   display:block;
-  padding-top: 25%;
-  padding-left: 43%;
+  padding-top: 20%;
+  padding-left: 45%;
   -webkit-animation: loadingdelay 3s forwards;
 }
 /*.fa .fa-spinner .fa-spin {
