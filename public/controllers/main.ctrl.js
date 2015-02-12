@@ -1,14 +1,14 @@
 ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$location', function($scope, $http, $route, $cookies, $location){
 
-    console.log("COOKIE: "+$cookies.user_id)
+    // console.log("COOKIE: "+$cookies.user_id)
 
     $scope.loggedInUser = $cookies.user_id
     $scope.bgImg
-// set this http get to user:
 
-// Get current user
+// Todo: Refactor using promises!
     $http.get("http://nomadr-api.herokuapp.com/api/users/"+$scope.loggedInUser).success(function(response){
 
+        // Get current user
         $scope.currentUser = response
 
         $scope.leaveDate = moment(new Date($scope.currentUser.departureDate)).format("MMMM Do, YYYY")
@@ -70,7 +70,6 @@ ourApp.controller("MainController", ['$scope', '$http', '$route','$cookies', '$l
         // console.log("farenheit is being called")
         return num.toFixed()
     }
-
 
     $scope.logout = function(){
         delete $cookies.user_id
