@@ -31,9 +31,12 @@ NomadR is the front-end client that requests all the relevant user data from our
 ##Usage
 This app is currently supported only on the Chrome Desktop Browser.
 
-
 ##Technologies:
 - Angular.js
 - Express.js
 
 ##Future Developments
+- Addition of travel flight information
+- Addition of cost of living
+- Addition of jobs in the area
+- Addition of popular local cafes and restaurants.
