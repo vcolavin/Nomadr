@@ -24,7 +24,7 @@ Dashboard display when you open a new tab/window:
 ![Nomadr Default Page](http://alfredcalayag.com/imgs/nomadr_screenshot_2.jpg)
 
 General information of your travel destination:
-![Nomadr General Information](http://alfredcalayag.com/imgs/nomadr_screenshot_1.jpg)
+![Nomadr General Information](http://alfredcalayag.com/imgs/nomadr_screenshot_3.jpg)
 
 NomadR is the front-end client that requests all the relevant user data from our custom API.  View the [Nomadr API](https://github.com/Nomadr/Nomadr-api) for info about the Nomadr Client's server.
 
